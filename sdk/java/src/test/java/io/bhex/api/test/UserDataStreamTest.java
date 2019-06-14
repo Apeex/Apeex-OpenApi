@@ -1,9 +1,9 @@
 package io.apeex.api.test;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexApiRestClient;
-import io.apeex.api.client.BHexApiWebSocketClient;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexApiRestClient;
+import io.apeex.api.client.ApeexApiWebSocketClient;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.test.constant.Constants;
 
 //@Slf4j
@@ -11,12 +11,12 @@ public class UserDataStreamTest {
 
     public static void main(String[] args) {
 //
-        BHexApiWebSocketClient client = BHexApiClientFactory.newInstance().newWebSocketClient();
-        BHexApiRestClient restClient = BHexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY).newRestClient();
+        ApeexApiWebSocketClient client = ApeexApiClientFactory.newInstance().newWebSocketClient();
+        ApeexApiRestClient restClient = ApeexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY).newRestClient();
 
         System.out.println("\n ------Get Listen Key -----");
         System.out.println();
-        String listenKey = restClient.startUserDataStream(BHexConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis());
+        String listenKey = restClient.startUserDataStream(ApeexConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis());
         System.out.println("listenKey:" + listenKey);
         // order
         client.onUserEvent(listenKey, response -> System.out.println(response), true);

@@ -1,6 +1,6 @@
 import time
 
-from apeex.client import BhexClient
+from apeex.client import ApeexClient
 
 if __name__ == '__main__':
 
@@ -9,7 +9,7 @@ if __name__ == '__main__':
         "https": "",
     }
 
-    b = BhexClient(api_key='', secret='', proxies=proxies)
+    b = ApeexClient(api_key='', secret='', proxies=proxies)
 
     print(b.time())
 

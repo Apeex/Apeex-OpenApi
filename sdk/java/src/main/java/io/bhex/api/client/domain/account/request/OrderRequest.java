@@ -1,6 +1,6 @@
 package io.apeex.api.client.domain.account.request;
 
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -14,7 +14,7 @@ public class OrderRequest {
 
     public OrderRequest() {
         this.timestamp = System.currentTimeMillis();
-        this.recvWindow = BHexConstants.DEFAULT_RECEIVING_WINDOW;
+        this.recvWindow = ApeexConstants.DEFAULT_RECEIVING_WINDOW;
     }
 
     public Long getRecvWindow() {
@@ -37,7 +37,7 @@ public class OrderRequest {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("recvWindow", recvWindow)
                 .append("timestamp", timestamp)
                 .toString();

@@ -1,8 +1,8 @@
 package io.apeex.api.test;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexApiRestClient;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexApiRestClient;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.account.*;
 import io.apeex.api.client.domain.account.request.*;
 import io.apeex.api.test.constant.Constants;
@@ -14,8 +14,8 @@ public class AccountRestApiTest {
 
     public static void main(String[] args) {
 
-        BHexApiClientFactory factory = BHexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY);
-        BHexApiRestClient client = factory.newRestClient();
+        ApeexApiClientFactory factory = ApeexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY);
+        ApeexApiRestClient client = factory.newRestClient();
 
         System.out.println("\n ------limit buy-----");
         NewOrderResponse response1 = client.newOrder(NewOrder.limitBuy("BTCUSDT", TimeInForce.GTC, "0.01", "5678.9"));
@@ -50,7 +50,7 @@ public class AccountRestApiTest {
         System.out.println(historyOrderList);
 
         System.out.println("\n ------get account information-----");
-        Account account = client.getAccount(BHexConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis());
+        Account account = client.getAccount(ApeexConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis());
         System.out.println(account);
         System.out.println(account.getBalances());
         System.out.println(account.getAssetBalance("ETH"));

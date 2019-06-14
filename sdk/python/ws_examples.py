@@ -1,11 +1,11 @@
-from apeex.websockets import BhexWss
+from apeex.websockets import ApeexWss
 
 
 def handler(msg):
     print(msg)
 
 
-client = BhexWss(api_key='', secret='')
+client = ApeexWss(api_key='', secret='')
 
 client.subscribe_to_realtimes(symbol='BTCUSDT,ETHUSDT', callback=handler)
 

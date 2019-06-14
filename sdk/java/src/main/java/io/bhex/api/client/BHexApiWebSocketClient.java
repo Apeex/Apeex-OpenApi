@@ -12,9 +12,9 @@ import io.apeex.api.client.domain.market.CandlestickInterval;
 import java.io.Closeable;
 
 /**
- * BHex API data streaming façade, supporting streaming of events through web sockets.
+ * Apeex API data streaming façade, supporting streaming of events through web sockets.
  */
-public interface BHexApiWebSocketClient extends Closeable {
+public interface ApeexApiWebSocketClient extends Closeable {
 
     /**
      * Open a new web socket to receive {@link DepthEvent depthEvents} on a callback.
@@ -24,9 +24,9 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @param autoRetry setting the choose to auto retry connect socket
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
-    Closeable onDepthEvent(String symbols, BHexApiCallback<DepthEvent> callback, boolean autoRetry);
+    Closeable onDepthEvent(String symbols, ApeexApiCallback<DepthEvent> callback, boolean autoRetry);
 
-    Closeable onDepthEvent(String symbols, BHexApiCallback<DepthEvent> callback);
+    Closeable onDepthEvent(String symbols, ApeexApiCallback<DepthEvent> callback);
 
     /**
      * Open a new web socket to receive {@link CandlestickEvent candlestickEvents} on a callback.
@@ -38,9 +38,9 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
 
-    Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, BHexApiCallback<CandlestickEvent> callback, boolean autoRetry);
+    Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, ApeexApiCallback<CandlestickEvent> callback, boolean autoRetry);
 
-    Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, BHexApiCallback<CandlestickEvent> callback);
+    Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, ApeexApiCallback<CandlestickEvent> callback);
 
 
     /**
@@ -51,9 +51,9 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @param autoRetry setting the choose to auto retry connect socket
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
-    Closeable onTradeEvent(String symbols, BHexApiCallback<TradeEvent> callback, boolean autoRetry);
+    Closeable onTradeEvent(String symbols, ApeexApiCallback<TradeEvent> callback, boolean autoRetry);
 
-    Closeable onTradeEvent(String symbols, BHexApiCallback<TradeEvent> callback);
+    Closeable onTradeEvent(String symbols, ApeexApiCallback<TradeEvent> callback);
 
     /**
      * Open a new web socket to receive {@link TickerEvent} on a callback
@@ -63,9 +63,9 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @param autoRetry setting the choose to auto retry connect socket
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
-    Closeable onTicker24HourEvent(String symbols, BHexApiCallback<TickerEvent> callback, boolean autoRetry);
+    Closeable onTicker24HourEvent(String symbols, ApeexApiCallback<TickerEvent> callback, boolean autoRetry);
 
-    Closeable onTicker24HourEvent(String symbols, BHexApiCallback<TickerEvent> callback);
+    Closeable onTicker24HourEvent(String symbols, ApeexApiCallback<TickerEvent> callback);
 
     /**
      * Open a new web socket to receive {@link IndexEvent} on a callback
@@ -75,9 +75,9 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @param autoRetry setting the choose to auto retry connect socket
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
-    Closeable onIndexEvent(String symbols, BHexApiCallback<IndexEvent> callback, boolean autoRetry);
+    Closeable onIndexEvent(String symbols, ApeexApiCallback<IndexEvent> callback, boolean autoRetry);
 
-    Closeable onIndexEvent(String symbols, BHexApiCallback<IndexEvent> callback);
+    Closeable onIndexEvent(String symbols, ApeexApiCallback<IndexEvent> callback);
 
     /**
      * Open a new web socket for account infomations on a callback
@@ -87,7 +87,7 @@ public interface BHexApiWebSocketClient extends Closeable {
      * @param autoRetry setting the choose to auto retry connect socket
      * @return
      */
-    Closeable onUserEvent(String listenKey, BHexApiCallback<SocketUserResponse> callback, boolean autoRetry);
+    Closeable onUserEvent(String listenKey, ApeexApiCallback<SocketUserResponse> callback, boolean autoRetry);
 
-    Closeable onUserEvent(String listenKey, BHexApiCallback<SocketUserResponse> callback);
+    Closeable onUserEvent(String listenKey, ApeexApiCallback<SocketUserResponse> callback);
 }

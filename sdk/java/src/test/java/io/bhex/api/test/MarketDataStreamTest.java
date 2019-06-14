@@ -1,14 +1,14 @@
 package io.apeex.api.test;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexApiWebSocketClient;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexApiWebSocketClient;
 import io.apeex.api.client.domain.market.CandlestickInterval;
 
 public class MarketDataStreamTest {
 
     public static void main(String[] args) {
 
-        BHexApiWebSocketClient client = BHexApiClientFactory.newInstance().newWebSocketClient();
+        ApeexApiWebSocketClient client = ApeexApiClientFactory.newInstance().newWebSocketClient();
 
         // depth
         client.onDepthEvent("BTCUSDT", response -> System.out.println(response));

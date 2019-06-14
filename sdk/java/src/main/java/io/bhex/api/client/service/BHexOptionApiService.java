@@ -2,7 +2,7 @@ package io.apeex.api.client.service;
 
 import java.util.List;
 
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.account.OrderSide;
 import io.apeex.api.client.domain.account.OrderStatus;
 import io.apeex.api.client.domain.account.OrderType;
@@ -20,15 +20,15 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
- * BHex's Option REST API URL mappings and endpoint security configuration.
+ * Apeex's Option REST API URL mappings and endpoint security configuration.
  */
-public interface BHexOptionApiService {
+public interface ApeexOptionApiService {
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/v1/getOptions")
     Call<List<TokenOptionResult>> getOptions(@Query("expired") Boolean expired);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @POST("/openapi/option/v1/order")
     Call<OptionOrderResult> newOptionOrder(@Query("symbol") String symbol,
                                                  @Query("side") String side,
@@ -40,14 +40,14 @@ public interface BHexOptionApiService {
                                                  @Query("recvWindow") Long recvWindow,
                                                  @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @DELETE("/openapi/option/v1/order/cancel")
     Call<OptionOrderResult> cancelOptionOrder(@Query("orderId") Long orderId,
                                               @Query("clientOrderId") String clientOrderId,
                                               @Query("recvWindow") Long recvWindow,
                                               @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/option/v1/openOrders")
     Call<List<OptionOrderResult>> getOptionOpenOrders(@Query("symbol") String symbol,
                                                       @Query("orderId") Long orderId,
@@ -57,7 +57,7 @@ public interface BHexOptionApiService {
                                                       @Query("recvWindow") Long recvWindow,
                                                       @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/option/v1/historyOrders")
     Call<List<OptionOrderResult>> getOptionHistoryOrders(@Query("symbol") String symbol,
                                                          @Query("side") String side,
@@ -67,7 +67,7 @@ public interface BHexOptionApiService {
                                                          @Query("recvWindow") Long recvWindow,
                                                          @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/option/v1/myTrades")
     Call<List<OptionMatchResult>> getOptionMyTrades(@Query("symbol") String symbol,
                                                     @Query("fromId") Long fromId,
@@ -77,13 +77,13 @@ public interface BHexOptionApiService {
                                                     @Query("recvWindow") Long recvWindow,
                                                     @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/option/v1/positions")
     Call<List<PositionResult>> getOptionPositions(@Query("symbol") String symbol,
                                                   @Query("recvWindow") Long recvWindow,
                                                   @Query("timestamp") Long timestamp);
 
-    @Headers(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @Headers(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/openapi/option/v1/settlements")
     Call<List<SettlementResult>> getOptionSettlements(@Query("symbol") String symbol,
                                                       @Query("recvWindow") Long recvWindow,

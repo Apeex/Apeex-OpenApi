@@ -1,16 +1,16 @@
 package io.apeex.api.client;
 
-import io.apeex.api.client.constant.BHexConstants;
-import io.apeex.api.client.impl.BHexApiRestClientImpl;
-import io.apeex.api.client.impl.BHexApiWebSocketClientImpl;
-import io.apeex.api.client.impl.BHexOptionApiRestClientImpl;
+import io.apeex.api.client.constant.ApeexConstants;
+import io.apeex.api.client.impl.ApeexApiRestClientImpl;
+import io.apeex.api.client.impl.ApeexApiWebSocketClientImpl;
+import io.apeex.api.client.impl.ApeexOptionApiRestClientImpl;
 
-import static io.apeex.api.client.impl.BHexApiServiceGenerator.getSharedClient;
+import static io.apeex.api.client.impl.ApeexApiServiceGenerator.getSharedClient;
 
 /**
- * A factory for creating BHexApi client objects.
+ * A factory for creating ApeexApi client objects.
  */
-public final class BHexApiClientFactory {
+public final class ApeexApiClientFactory {
 
     /**
      * API Key
@@ -22,20 +22,20 @@ public final class BHexApiClientFactory {
      */
     private String secret;
 
-    private String baseUrl = BHexConstants.API_BASE_URL;
+    private String baseUrl = ApeexConstants.API_BASE_URL;
 
     /**
-     * Instantiates a new BHex api client factory.
+     * Instantiates a new Apeex api client factory.
      *
      * @param apiKey the API key
      * @param secret the Secret
      */
-    private BHexApiClientFactory(String apiKey, String secret) {
+    private ApeexApiClientFactory(String apiKey, String secret) {
         this.apiKey = apiKey;
         this.secret = secret;
     }
 
-    private BHexApiClientFactory(String baseUrl, String apiKey, String secret) {
+    private ApeexApiClientFactory(String baseUrl, String apiKey, String secret) {
         this.baseUrl = baseUrl;
         this.apiKey = apiKey;
         this.secret = secret;
@@ -46,10 +46,10 @@ public final class BHexApiClientFactory {
      *
      * @param apiKey the API key
      * @param secret the Secret
-     * @return the BHex api client factory
+     * @return the Apeex api client factory
      */
-    public static BHexApiClientFactory newInstance(String apiKey, String secret) {
-        return new BHexApiClientFactory(apiKey, secret);
+    public static ApeexApiClientFactory newInstance(String apiKey, String secret) {
+        return new ApeexApiClientFactory(apiKey, secret);
     }
 
     /**
@@ -60,29 +60,29 @@ public final class BHexApiClientFactory {
      * @param secret
      * @return
      */
-    public static BHexApiClientFactory newInstance(String baseUrl, String apiKey, String secret) {
-        return new BHexApiClientFactory(baseUrl, apiKey, secret);
+    public static ApeexApiClientFactory newInstance(String baseUrl, String apiKey, String secret) {
+        return new ApeexApiClientFactory(baseUrl, apiKey, secret);
     }
 
     /**
      * New instance without authentication.
      *
-     * @return the BHex api client factory
+     * @return the Apeex api client factory
      */
-    public static BHexApiClientFactory newInstance() {
-        return new BHexApiClientFactory(null, null);
+    public static ApeexApiClientFactory newInstance() {
+        return new ApeexApiClientFactory(null, null);
     }
 
     /**
      * Creates a new synchronous/blocking REST client.
      */
-    public BHexApiRestClient newRestClient() {
-        return new BHexApiRestClientImpl(baseUrl, apiKey, secret);
+    public ApeexApiRestClient newRestClient() {
+        return new ApeexApiRestClientImpl(baseUrl, apiKey, secret);
     }
 
 
-    public BHexApiWebSocketClient newWebSocketClient() {
-        return new BHexApiWebSocketClientImpl(getSharedClient(), BHexConstants.WS_API_BASE_URL, BHexConstants.WS_API_USER_URL);
+    public ApeexApiWebSocketClient newWebSocketClient() {
+        return new ApeexApiWebSocketClientImpl(getSharedClient(), ApeexConstants.WS_API_BASE_URL, ApeexConstants.WS_API_USER_URL);
     }
 
     /**
@@ -92,15 +92,15 @@ public final class BHexApiClientFactory {
      * @param wsApiUserUrl
      * @return
      */
-    public BHexApiWebSocketClient newWebSocketClient(String wsApiBaseUrl, String wsApiUserUrl) {
-        return new BHexApiWebSocketClientImpl(getSharedClient(), wsApiBaseUrl, wsApiUserUrl);
+    public ApeexApiWebSocketClient newWebSocketClient(String wsApiBaseUrl, String wsApiUserUrl) {
+        return new ApeexApiWebSocketClientImpl(getSharedClient(), wsApiBaseUrl, wsApiUserUrl);
     }
 
     /**
      * Creates a new synchronous/blocking Option REST client.
      */
-    public BHexOptionApiRestClient newOptionRestClient() {
-        return new BHexOptionApiRestClientImpl(baseUrl, apiKey, secret);
+    public ApeexOptionApiRestClient newOptionRestClient() {
+        return new ApeexOptionApiRestClientImpl(baseUrl, apiKey, secret);
     }
 
 }

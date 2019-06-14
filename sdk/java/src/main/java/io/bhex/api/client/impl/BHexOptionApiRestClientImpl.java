@@ -2,8 +2,8 @@ package io.apeex.api.client.impl;
 
 import java.util.List;
 
-import io.apeex.api.client.BHexOptionApiRestClient;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.ApeexOptionApiRestClient;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.account.request.CancelOrderRequest;
 import io.apeex.api.client.domain.option.OptionMatchResult;
 import io.apeex.api.client.domain.option.OptionOrderResult;
@@ -17,20 +17,20 @@ import io.apeex.api.client.domain.option.request.OptionPositionRequest;
 import io.apeex.api.client.domain.option.request.OptionSettlementRequest;
 import io.apeex.api.client.domain.option.request.OptionTradeRequest;
 import io.apeex.api.client.domain.option.request.OptionsRequest;
-import io.apeex.api.client.service.BHexOptionApiService;
+import io.apeex.api.client.service.ApeexOptionApiService;
 
-import static io.apeex.api.client.impl.BHexApiServiceGenerator.createService;
-import static io.apeex.api.client.impl.BHexApiServiceGenerator.executeSync;
+import static io.apeex.api.client.impl.ApeexApiServiceGenerator.createService;
+import static io.apeex.api.client.impl.ApeexApiServiceGenerator.executeSync;
 
 /**
- * Implementation of BHex's Option REST API using Retrofit with synchronous/blocking method calls.
+ * Implementation of Apeex's Option REST API using Retrofit with synchronous/blocking method calls.
  */
-public class BHexOptionApiRestClientImpl implements BHexOptionApiRestClient {
+public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
-    private final BHexOptionApiService bHexOptionApiService;
+    private final ApeexOptionApiService bHexOptionApiService;
 
-    public BHexOptionApiRestClientImpl(String baseUrl, String apiKey, String secret) {
-        bHexOptionApiService = createService(baseUrl, BHexOptionApiService.class, apiKey, secret);
+    public ApeexOptionApiRestClientImpl(String baseUrl, String apiKey, String secret) {
+        bHexOptionApiService = createService(baseUrl, ApeexOptionApiService.class, apiKey, secret);
     }
 
     @Override

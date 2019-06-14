@@ -1,7 +1,7 @@
 package io.apeex.api.test;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexApiRestClient;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexApiRestClient;
 import io.apeex.api.client.domain.market.*;
 import io.apeex.api.test.constant.Constants;
 
@@ -12,8 +12,8 @@ public class MarketDataRestApiTest {
 
     public static void main(String[] args) {
 
-        BHexApiClientFactory factory = BHexApiClientFactory.newInstance();
-        BHexApiRestClient client = factory.newRestClient();
+        ApeexApiClientFactory factory = ApeexApiClientFactory.newInstance();
+        ApeexApiRestClient client = factory.newRestClient();
         String symbol = "BTCUSDT";
 
 

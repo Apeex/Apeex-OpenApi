@@ -2,9 +2,9 @@ package io.apeex.api.client.impl;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.apeex.api.client.BHexApiError;
-import io.apeex.api.client.constant.BHexConstants;
-import io.apeex.api.client.exception.BHexApiException;
+import io.apeex.api.client.ApeexApiError;
+import io.apeex.api.client.constant.ApeexConstants;
+import io.apeex.api.client.exception.ApeexApiException;
 import io.apeex.api.client.security.AuthenticationInterceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
@@ -20,9 +20,9 @@ import java.lang.annotation.Annotation;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Generates a BHex API implementation based on @see {@link io.apeex.api.client.service.BHexApiService}.
+ * Generates a Apeex API implementation based on @see {@link io.apeex.api.client.service.ApeexApiService}.
  */
-public class BHexApiServiceGenerator {
+public class ApeexApiServiceGenerator {
     private static final OkHttpClient sharedClient = new OkHttpClient.Builder()
             .pingInterval(20, TimeUnit.SECONDS)
             .build();
@@ -33,16 +33,16 @@ public class BHexApiServiceGenerator {
     private static final Converter.Factory converterFactory = JacksonConverterFactory.create(OBJECT_MAPPER);
 
     @SuppressWarnings("unchecked")
-    private static final Converter<ResponseBody, BHexApiError> errorBodyConverter =
-            (Converter<ResponseBody, BHexApiError>) converterFactory.responseBodyConverter(
-                    BHexApiError.class, new Annotation[0], null);
+    private static final Converter<ResponseBody, ApeexApiError> errorBodyConverter =
+            (Converter<ResponseBody, ApeexApiError>) converterFactory.responseBodyConverter(
+                    ApeexApiError.class, new Annotation[0], null);
 
     public static <S> S createService(Class<S> serviceClass) {
-        return createService(BHexConstants.API_BASE_URL, serviceClass, null, null);
+        return createService(ApeexConstants.API_BASE_URL, serviceClass, null, null);
     }
 
     public static <S> S createService(Class<S> serviceClass, String apiKey, String secret) {
-        return createService(BHexConstants.API_BASE_URL, serviceClass, apiKey, secret);
+        return createService(ApeexConstants.API_BASE_URL, serviceClass, apiKey, secret);
     }
 
     /**
@@ -81,18 +81,18 @@ public class BHexApiServiceGenerator {
             if (response.isSuccessful()) {
                 return response.body();
             } else {
-                BHexApiError apiError = getBHexApiError(response);
-                throw new BHexApiException(apiError);
+                ApeexApiError apiError = getApeexApiError(response);
+                throw new ApeexApiException(apiError);
             }
         } catch (IOException e) {
-            throw new BHexApiException(e);
+            throw new ApeexApiException(e);
         }
     }
 
     /**
      * Extracts and converts the response error body into an object.
      */
-    public static BHexApiError getBHexApiError(Response<?> response) throws IOException, BHexApiException {
+    public static ApeexApiError getApeexApiError(Response<?> response) throws IOException, ApeexApiException {
         return errorBodyConverter.convert(response.errorBody());
     }
 

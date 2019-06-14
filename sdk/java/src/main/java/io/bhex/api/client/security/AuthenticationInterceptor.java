@@ -1,6 +1,6 @@
 package io.apeex.api.client.security;
 
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import okhttp3.*;
 import okio.Buffer;
 import org.apache.commons.lang3.StringUtils;
@@ -27,14 +27,14 @@ public class AuthenticationInterceptor implements Interceptor {
         Request original = chain.request();
         Request.Builder newRequestBuilder = original.newBuilder();
 
-        boolean isApiKeyRequired = original.header(BHexConstants.ENDPOINT_SECURITY_TYPE_APIKEY) != null;
-        boolean isSignatureRequired = original.header(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED) != null;
-        newRequestBuilder.removeHeader(BHexConstants.ENDPOINT_SECURITY_TYPE_APIKEY)
-                .removeHeader(BHexConstants.ENDPOINT_SECURITY_TYPE_SIGNED);
+        boolean isApiKeyRequired = original.header(ApeexConstants.ENDPOINT_SECURITY_TYPE_APIKEY) != null;
+        boolean isSignatureRequired = original.header(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED) != null;
+        newRequestBuilder.removeHeader(ApeexConstants.ENDPOINT_SECURITY_TYPE_APIKEY)
+                .removeHeader(ApeexConstants.ENDPOINT_SECURITY_TYPE_SIGNED);
 
         // Endpoint requires sending a valid API-KEY
         if (isApiKeyRequired || isSignatureRequired) {
-            newRequestBuilder.addHeader(BHexConstants.API_KEY_HEADER, apiKey);
+            newRequestBuilder.addHeader(ApeexConstants.API_KEY_HEADER, apiKey);
         }
 
         // Endpoint requires signing the payload

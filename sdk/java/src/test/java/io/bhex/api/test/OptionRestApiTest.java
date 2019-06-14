@@ -3,8 +3,8 @@ package io.apeex.api.test;
 import java.util.Date;
 import java.util.List;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexOptionApiRestClient;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexOptionApiRestClient;
 import io.apeex.api.client.domain.account.OrderSide;
 import io.apeex.api.client.domain.account.OrderType;
 import io.apeex.api.client.domain.account.TimeInForce;
@@ -25,8 +25,8 @@ import io.apeex.api.test.constant.Constants;
 public class OptionRestApiTest {
 
     public static void main(String[] args) {
-        BHexApiClientFactory factory = BHexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY);
-        BHexOptionApiRestClient client = factory.newOptionRestClient();
+        ApeexApiClientFactory factory = ApeexApiClientFactory.newInstance(Constants.ACCESS_KEY, Constants.SECRET_KEY);
+        ApeexOptionApiRestClient client = factory.newOptionRestClient();
 
         System.out.println("\n ------get options-----");
 

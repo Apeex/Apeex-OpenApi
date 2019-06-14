@@ -2,9 +2,9 @@ package io.apeex.api.client.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.apeex.api.client.BHexApiCallback;
-import io.apeex.api.client.constant.BHexConstants;
-import io.apeex.api.client.exception.BHexApiException;
+import io.apeex.api.client.ApeexApiCallback;
+import io.apeex.api.client.constant.ApeexConstants;
+import io.apeex.api.client.exception.ApeexApiException;
 import okhttp3.Response;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
@@ -12,11 +12,11 @@ import okhttp3.WebSocketListener;
 import java.io.IOException;
 
 /**
- * BHex API WebSocket listener.
+ * Apeex API WebSocket listener.
  */
-public class BHexApiWebSocketListener<T> extends WebSocketListener {
+public class ApeexApiWebSocketListener<T> extends WebSocketListener {
 
-    private BHexApiCallback<T> callback;
+    private ApeexApiCallback<T> callback;
 
     private Class<T> eventClass;
 
@@ -26,12 +26,12 @@ public class BHexApiWebSocketListener<T> extends WebSocketListener {
 
     private boolean failure = false;
 
-    public BHexApiWebSocketListener(BHexApiCallback<T> callback, Class<T> eventClass) {
+    public ApeexApiWebSocketListener(ApeexApiCallback<T> callback, Class<T> eventClass) {
         this.callback = callback;
         this.eventClass = eventClass;
     }
 
-    public BHexApiWebSocketListener(BHexApiCallback<T> callback, TypeReference<T> eventTypeReference) {
+    public ApeexApiWebSocketListener(ApeexApiCallback<T> callback, TypeReference<T> eventTypeReference) {
         this.callback = callback;
         this.eventTypeReference = eventTypeReference;
     }
@@ -43,7 +43,7 @@ public class BHexApiWebSocketListener<T> extends WebSocketListener {
     @Override
     public void onMessage(WebSocket webSocket, String text) {
         this.failure = false;
-        if (text.contains(BHexConstants.PONG_MSG_KEY) || text.contains(BHexConstants.PING_MSG_KEY)) {
+        if (text.contains(ApeexConstants.PONG_MSG_KEY) || text.contains(ApeexConstants.PING_MSG_KEY)) {
             return;
         }
         ObjectMapper mapper = new ObjectMapper();
@@ -56,7 +56,7 @@ public class BHexApiWebSocketListener<T> extends WebSocketListener {
             }
             callback.onResponse(event);
         } catch (IOException e) {
-            throw new BHexApiException(e);
+            throw new ApeexApiException(e);
         }
     }
 

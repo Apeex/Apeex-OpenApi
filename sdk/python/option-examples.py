@@ -1,8 +1,8 @@
 import logging
 import time
 
-from apeex.client import BhexOptionClient
-from apeex.exceptions import BhexRequestException, BhexAPIException
+from apeex.client import ApeexOptionClient
+from apeex.exceptions import ApeexRequestException, ApeexAPIException
 
 if __name__ == '__main__':
 
@@ -11,7 +11,7 @@ if __name__ == '__main__':
         "https": "",
     }
 
-    b = BhexOptionClient(api_key='', secret='', proxies=proxies)
+    b = ApeexOptionClient(api_key='', secret='', proxies=proxies)
 
     try:
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
         print(b.stream_close(listen_key.get('listenKey')))
 
-    except BhexRequestException as bre:
+    except ApeexRequestException as bre:
         logging.error(bre)
-    except BhexAPIException as bae:
+    except ApeexAPIException as bae:
         logging.error(bae)

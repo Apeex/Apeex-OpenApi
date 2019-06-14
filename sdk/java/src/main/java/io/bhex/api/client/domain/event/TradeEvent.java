@@ -2,7 +2,7 @@ package io.apeex.api.client.domain.event;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public class TradeEvent {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("symbol", symbol)
                 .append("itemList", itemList)
                 .toString();

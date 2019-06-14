@@ -3,7 +3,7 @@ package io.apeex.api.client.domain.event;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.market.OrderBookEntry;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -70,7 +70,7 @@ public class DepthEvent {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("eventTime", eventTime)
                 .append("symbol", symbol)
                 .append("bids", bids)

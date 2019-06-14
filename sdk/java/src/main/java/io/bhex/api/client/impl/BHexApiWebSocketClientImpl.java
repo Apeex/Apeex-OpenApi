@@ -3,9 +3,9 @@ package io.apeex.api.client.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
-import io.apeex.api.client.BHexApiCallback;
-import io.apeex.api.client.BHexApiWebSocketClient;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.ApeexApiCallback;
+import io.apeex.api.client.ApeexApiWebSocketClient;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.account.SocketUserResponse;
 import io.apeex.api.client.domain.channel.ChannelRequest;
 import io.apeex.api.client.domain.channel.EventTopic;
@@ -28,34 +28,34 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * BHex API WebSocket client implementation using OkHttp.
+ * Apeex API WebSocket client implementation using OkHttp.
  */
 @Slf4j
-public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Closeable {
+public class ApeexApiWebSocketClientImpl implements ApeexApiWebSocketClient, Closeable {
 
     private final OkHttpClient client;
-    private String wsApiQuoteUrl = BHexConstants.WS_API_BASE_URL;
-    private String wsApiUserUrl = BHexConstants.WS_API_USER_URL;
+    private String wsApiQuoteUrl = ApeexConstants.WS_API_BASE_URL;
+    private String wsApiUserUrl = ApeexConstants.WS_API_USER_URL;
 
     private ExecutorService executorService = Executors.newCachedThreadPool();
 
-    public BHexApiWebSocketClientImpl(OkHttpClient client) {
+    public ApeexApiWebSocketClientImpl(OkHttpClient client) {
         this.client = client;
     }
 
-    public BHexApiWebSocketClientImpl(OkHttpClient client, String wsApiQuoteUrl, String wsApiUserUrl) {
+    public ApeexApiWebSocketClientImpl(OkHttpClient client, String wsApiQuoteUrl, String wsApiUserUrl) {
         this.client = client;
         this.wsApiQuoteUrl = wsApiQuoteUrl;
         this.wsApiUserUrl = wsApiUserUrl;
     }
 
     @Override
-    public Closeable onDepthEvent(String symbols, BHexApiCallback<DepthEvent> callback) {
+    public Closeable onDepthEvent(String symbols, ApeexApiCallback<DepthEvent> callback) {
         return this.onDepthEvent(symbols, callback, false);
     }
 
     @Override
-    public Closeable onDepthEvent(String symbols, BHexApiCallback<DepthEvent> callback, boolean retry) {
+    public Closeable onDepthEvent(String symbols, ApeexApiCallback<DepthEvent> callback, boolean retry) {
 
         ChannelRequest request = new ChannelRequest();
         request.setSymbol(symbols);
@@ -64,7 +64,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         ObjectMapper mapper = new ObjectMapper();
         try {
             String channel = mapper.writeValueAsString(request);
-            return createNewWebSocket(channel, new BHexApiWebSocketListener<>(callback, DepthEvent.class), retry);
+            return createNewWebSocket(channel, new ApeexApiWebSocketListener<>(callback, DepthEvent.class), retry);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -72,12 +72,12 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     }
 
     @Override
-    public Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, BHexApiCallback<CandlestickEvent> callback) {
+    public Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, ApeexApiCallback<CandlestickEvent> callback) {
         return this.onCandlestickEvent(symbols, interval, callback, false);
     }
 
     @Override
-    public Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, BHexApiCallback<CandlestickEvent> callback, boolean retry) {
+    public Closeable onCandlestickEvent(String symbols, CandlestickInterval interval, ApeexApiCallback<CandlestickEvent> callback, boolean retry) {
         ChannelRequest request = new ChannelRequest();
         request.setSymbol(symbols);
         request.setTopic(EventTopic.KLINE.getTopic(interval.getIntervalId()));
@@ -85,7 +85,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         ObjectMapper mapper = new ObjectMapper();
         try {
             String channel = mapper.writeValueAsString(request);
-            return createNewWebSocket(channel, new BHexApiWebSocketListener<>(callback, CandlestickEvent.class), retry);
+            return createNewWebSocket(channel, new ApeexApiWebSocketListener<>(callback, CandlestickEvent.class), retry);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -93,12 +93,12 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     }
 
     @Override
-    public Closeable onTradeEvent(String symbols, BHexApiCallback<TradeEvent> callback) {
+    public Closeable onTradeEvent(String symbols, ApeexApiCallback<TradeEvent> callback) {
         return this.onTradeEvent(symbols, callback, false);
     }
 
     @Override
-    public Closeable onTradeEvent(String symbols, BHexApiCallback<TradeEvent> callback, boolean retry) {
+    public Closeable onTradeEvent(String symbols, ApeexApiCallback<TradeEvent> callback, boolean retry) {
         ChannelRequest request = new ChannelRequest();
         request.setSymbol(symbols);
         request.setTopic(EventTopic.TRADES.getTopic());
@@ -106,7 +106,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         ObjectMapper mapper = new ObjectMapper();
         try {
             String channel = mapper.writeValueAsString(request);
-            return createNewWebSocket(channel, new BHexApiWebSocketListener<>(callback, TradeEvent.class), retry);
+            return createNewWebSocket(channel, new ApeexApiWebSocketListener<>(callback, TradeEvent.class), retry);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -114,12 +114,12 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     }
 
     @Override
-    public Closeable onTicker24HourEvent(String symbols, BHexApiCallback<TickerEvent> callback) {
+    public Closeable onTicker24HourEvent(String symbols, ApeexApiCallback<TickerEvent> callback) {
         return onTicker24HourEvent(symbols, callback, false);
     }
 
     @Override
-    public Closeable onTicker24HourEvent(String symbols, BHexApiCallback<TickerEvent> callback, boolean retry) {
+    public Closeable onTicker24HourEvent(String symbols, ApeexApiCallback<TickerEvent> callback, boolean retry) {
         ChannelRequest request = new ChannelRequest();
         request.setSymbol(symbols);
         request.setTopic(EventTopic.REALTIMES.getTopic());
@@ -127,7 +127,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         ObjectMapper mapper = new ObjectMapper();
         try {
             String channel = mapper.writeValueAsString(request);
-            return createNewWebSocket(channel, new BHexApiWebSocketListener<>(callback, TickerEvent.class), retry);
+            return createNewWebSocket(channel, new ApeexApiWebSocketListener<>(callback, TickerEvent.class), retry);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -135,12 +135,12 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     }
 
     @Override
-    public Closeable onIndexEvent(String symbols, BHexApiCallback<IndexEvent> callback) {
+    public Closeable onIndexEvent(String symbols, ApeexApiCallback<IndexEvent> callback) {
         return onIndexEvent(symbols, callback, false);
     }
 
     @Override
-    public Closeable onIndexEvent(String symbols, BHexApiCallback<IndexEvent> callback, boolean retry) {
+    public Closeable onIndexEvent(String symbols, ApeexApiCallback<IndexEvent> callback, boolean retry) {
         ChannelRequest request = new ChannelRequest();
         request.setSymbol(symbols);
         request.setTopic(EventTopic.INDEX.getTopic());
@@ -148,7 +148,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         ObjectMapper mapper = new ObjectMapper();
         try {
             String channel = mapper.writeValueAsString(request);
-            return createNewWebSocket(channel, new BHexApiWebSocketListener<>(callback, IndexEvent.class), retry);
+            return createNewWebSocket(channel, new ApeexApiWebSocketListener<>(callback, IndexEvent.class), retry);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -156,18 +156,18 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     }
 
     @Override
-    public Closeable onUserEvent(String listenKey, BHexApiCallback<SocketUserResponse> callback) {
+    public Closeable onUserEvent(String listenKey, ApeexApiCallback<SocketUserResponse> callback) {
         return this.onUserEvent(listenKey, callback, false);
     }
 
     @Override
-    public Closeable onUserEvent(String listenKey, BHexApiCallback<SocketUserResponse> callback, boolean retry) {
+    public Closeable onUserEvent(String listenKey, ApeexApiCallback<SocketUserResponse> callback, boolean retry) {
         ChannelRequest request = new ChannelRequest();
         request.setTopic(EventTopic.ORDER.getTopic());
         request.setEvent(EventType.SUB.getType());
         ObjectMapper mapper = new ObjectMapper();
         try {
-            BHexApiWebSocketUserListener listener = new BHexApiWebSocketUserListener<>(callback);
+            ApeexApiWebSocketUserListener listener = new ApeexApiWebSocketUserListener<>(callback);
             String channel = mapper.writeValueAsString(request);
             Closeable closeable = createNewUserWebSocket(channel, listenKey, listener, retry);
             return closeable;
@@ -184,7 +184,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
     public void close() {
     }
 
-    private Closeable createNewWebSocket(String channel, BHexApiWebSocketListener<?> listener, boolean retry) {
+    private Closeable createNewWebSocket(String channel, ApeexApiWebSocketListener<?> listener, boolean retry) {
         String streamingUrl = String.format("%s/%s", wsApiQuoteUrl, channel);
         Request request = new Request.Builder().url(streamingUrl).build();
         final WebSocket webSocket = client.newWebSocket(request, listener);
@@ -195,7 +195,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         return closeable;
     }
 
-    private Closeable createNewUserWebSocket(String channel, String listenKey, BHexApiWebSocketUserListener<?> listener, boolean retry) {
+    private Closeable createNewUserWebSocket(String channel, String listenKey, ApeexApiWebSocketUserListener<?> listener, boolean retry) {
         Request request = new Request.Builder().url(wsApiUserUrl + listenKey).build();
         listener.setFailure(false);
         final WebSocket webSocket = client.newWebSocket(request, listener);
@@ -222,7 +222,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         return null;
     }
 
-    public Runnable socketMonitor(WebSocket webSocket, String channel, BHexApiWebSocketListener<?> listener, boolean retry) {
+    public Runnable socketMonitor(WebSocket webSocket, String channel, ApeexApiWebSocketListener<?> listener, boolean retry) {
         return new Runnable() {
 
             private long lastTime = 0;
@@ -234,9 +234,9 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
                     try {
                         long time = System.currentTimeMillis();
                         // 间隔大于1分钟，发送一次心跳
-                        if ((time - lastTime) > BHexConstants.HEART_BEAT_INTERVAL) {
+                        if ((time - lastTime) > ApeexConstants.HEART_BEAT_INTERVAL) {
                             ObjectMapper mapper = new ObjectMapper();
-                            pingMap.put(BHexConstants.PING_MSG_KEY, time);
+                            pingMap.put(ApeexConstants.PING_MSG_KEY, time);
                             webSocket.send(mapper.writeValueAsString(pingMap));
                             lastTime = time;
                         }
@@ -255,7 +255,7 @@ public class BHexApiWebSocketClientImpl implements BHexApiWebSocketClient, Close
         };
     }
 
-    public Runnable userSocketMonitor(String channel, String listenKey, BHexApiWebSocketUserListener<?> listener) {
+    public Runnable userSocketMonitor(String channel, String listenKey, ApeexApiWebSocketUserListener<?> listener) {
         return () -> {
             while (true) {
                 try {

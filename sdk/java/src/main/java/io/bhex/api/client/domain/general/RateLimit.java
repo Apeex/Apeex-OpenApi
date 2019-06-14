@@ -1,6 +1,6 @@
 package io.apeex.api.client.domain.general;
 
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -40,7 +40,7 @@ public class RateLimit {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("rateLimitType", rateLimitType)
                 .append("interval", interval)
                 .append("limit", limit)

@@ -1,7 +1,7 @@
 package io.apeex.api.client.domain.general;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
@@ -61,7 +61,7 @@ public class BrokerInfo {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("timezone", timezone)
                 .append("serverTime", serverTime)
                 .append("brokerFilters", brokerFilters)

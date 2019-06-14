@@ -2,7 +2,7 @@ package io.apeex.api.client.constant;
 
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class BHexConstants {
+public class ApeexConstants {
 
     public static final long DEFAULT_RECEIVING_WINDOW = 5_000L;
 

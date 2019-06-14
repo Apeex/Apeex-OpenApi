@@ -1,7 +1,7 @@
-Welcome to Bhex-Python
+Welcome to Apeex-Python
 ======================
 
-An official Python implementation of the lastest Open API for Bhex.
+An official Python implementation of the lastest Open API for Apeex.
 
 Install
 -------
@@ -17,7 +17,7 @@ Usage
 
 Init apeex client:
 ```python
-b = BhexClient(api_key='', secret='')
+b = ApeexClient(api_key='', secret='')
 ```
 
 Request with proxies:
@@ -28,7 +28,7 @@ proxies = {
   "https": "http://ip:port",
 }
 
-b = BhexClient(api_key='', secret='', proxies=proxies)
+b = ApeexClient(api_key='', secret='', proxies=proxies)
 ```
 
 #### Web Socket
@@ -37,7 +37,7 @@ b = BhexClient(api_key='', secret='', proxies=proxies)
 
 Init apeex websocket client:
 ```python
-client = BhexWss(api_key='', secret='')
+client = ApeexWss(api_key='', secret='')
 ```
 
 ##### Subscribe

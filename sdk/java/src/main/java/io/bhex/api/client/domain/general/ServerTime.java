@@ -1,7 +1,7 @@
 package io.apeex.api.client.domain.general;
 
 /**
- * Time of the server running BHex's REST API.
+ * Time of the server running Apeex's REST API.
  */
 public class ServerTime {
     private Long serverTime;

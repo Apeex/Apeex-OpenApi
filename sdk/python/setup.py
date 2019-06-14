@@ -4,7 +4,7 @@ import os
 
 from setuptools import setup, find_packages
 
-description = "Python SDK for Bhex REST And Websocket API (https://www.apeex.io)"
+description = "Python SDK for Apeex REST And Websocket API (https://www.apeex.io)"
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,7 +17,7 @@ def read(*parts):
 setup(
     name="apeex",
     version="1.1",
-    author="Bhex",
+    author="Apeex",
     author_email="pip@apeex.io",
     description=description,
     long_description=read('README.md'),

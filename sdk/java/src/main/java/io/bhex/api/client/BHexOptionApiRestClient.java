@@ -16,7 +16,7 @@ import io.apeex.api.client.domain.option.request.OptionSettlementRequest;
 import io.apeex.api.client.domain.option.request.OptionTradeRequest;
 import io.apeex.api.client.domain.option.request.OptionsRequest;
 
-public interface BHexOptionApiRestClient {
+public interface ApeexOptionApiRestClient {
 
     /**
      * Get options

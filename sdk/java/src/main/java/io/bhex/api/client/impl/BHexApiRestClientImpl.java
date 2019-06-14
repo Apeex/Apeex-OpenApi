@@ -1,27 +1,27 @@
 package io.apeex.api.client.impl;
 
-import io.apeex.api.client.BHexApiRestClient;
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.ApeexApiRestClient;
+import io.apeex.api.client.constant.ApeexConstants;
 import io.apeex.api.client.domain.account.*;
 import io.apeex.api.client.domain.account.request.*;
 import io.apeex.api.client.domain.general.BrokerInfo;
 import io.apeex.api.client.domain.market.*;
-import io.apeex.api.client.service.BHexApiService;
+import io.apeex.api.client.service.ApeexApiService;
 
 import java.util.List;
 
-import static io.apeex.api.client.impl.BHexApiServiceGenerator.createService;
-import static io.apeex.api.client.impl.BHexApiServiceGenerator.executeSync;
+import static io.apeex.api.client.impl.ApeexApiServiceGenerator.createService;
+import static io.apeex.api.client.impl.ApeexApiServiceGenerator.executeSync;
 
 /**
- * Implementation of BHex's REST API using Retrofit with synchronous/blocking method calls.
+ * Implementation of Apeex's REST API using Retrofit with synchronous/blocking method calls.
  */
-public class BHexApiRestClientImpl implements BHexApiRestClient {
+public class ApeexApiRestClientImpl implements ApeexApiRestClient {
 
-    private final BHexApiService bHexApiService;
+    private final ApeexApiService bHexApiService;
 
-    public BHexApiRestClientImpl(String baseUrl, String apiKey, String secret) {
-        bHexApiService = createService(baseUrl, BHexApiService.class, apiKey, secret);
+    public ApeexApiRestClientImpl(String baseUrl, String apiKey, String secret) {
+        bHexApiService = createService(baseUrl, ApeexApiService.class, apiKey, secret);
     }
 
     // General endpoints

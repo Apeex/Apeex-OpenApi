@@ -7,7 +7,7 @@ import io.apeex.api.client.domain.market.*;
 
 import java.util.List;
 
-public interface BHexApiRestClient {
+public interface ApeexApiRestClient {
 
     void ping();
 

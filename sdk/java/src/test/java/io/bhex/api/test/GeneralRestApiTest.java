@@ -1,7 +1,7 @@
 package io.apeex.api.test;
 
-import io.apeex.api.client.BHexApiClientFactory;
-import io.apeex.api.client.BHexApiRestClient;
+import io.apeex.api.client.ApeexApiClientFactory;
+import io.apeex.api.client.ApeexApiRestClient;
 import io.apeex.api.client.domain.general.BrokerInfo;
 import io.apeex.api.test.constant.Constants;
 
@@ -9,8 +9,8 @@ public class GeneralRestApiTest {
 
     public static void main(String[] args) {
 
-        BHexApiClientFactory factory = BHexApiClientFactory.newInstance();
-        BHexApiRestClient client = factory.newRestClient();
+        ApeexApiClientFactory factory = ApeexApiClientFactory.newInstance();
+        ApeexApiRestClient client = factory.newRestClient();
 
         System.out.println("\n ------BrokerInfo-----");
         BrokerInfo brokerInfo = client.getBrokerInfo();

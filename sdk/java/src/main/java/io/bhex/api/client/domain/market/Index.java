@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 /**
- * Index of a symbol in BHex.
+ * Index of a symbol in Apeex.
  */
 @Data
 @NoArgsConstructor

@@ -1,6 +1,6 @@
 package io.apeex.api.client.domain.general;
 
-import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.ApeexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
@@ -93,7 +93,7 @@ public class Symbol implements Serializable {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, BHexConstants.TO_STRING_BUILDER_STYLE)
+        return new ToStringBuilder(this, ApeexConstants.TO_STRING_BUILDER_STYLE)
                 .append("symbol", symbol)
                 .append("status", status)
                 .append("baseAsset", baseAsset)
