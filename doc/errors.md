@@ -88,7 +88,7 @@ Errors consist of two parts: an error code and a message. Codes are universal,
 ### -1103 UNKNOWN_PARAM
 
 * An unknown parameter was sent.
-* In BHEx Open Api , each request requires at least one parameter. {Timestamp}.
+* In Apeex Open Api , each request requires at least one parameter. {Timestamp}.
 
 ### -1104 UNREAD_PARAMETERS
 

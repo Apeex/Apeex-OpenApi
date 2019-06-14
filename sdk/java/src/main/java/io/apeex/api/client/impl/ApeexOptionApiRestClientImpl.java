@@ -27,20 +27,20 @@ import static io.apeex.api.client.impl.ApeexApiServiceGenerator.executeSync;
  */
 public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
-    private final ApeexOptionApiService bHexOptionApiService;
+    private final ApeexOptionApiService aPeexOptionApiService;
 
     public ApeexOptionApiRestClientImpl(String baseUrl, String apiKey, String secret) {
-        bHexOptionApiService = createService(baseUrl, ApeexOptionApiService.class, apiKey, secret);
+        aPeexOptionApiService = createService(baseUrl, ApeexOptionApiService.class, apiKey, secret);
     }
 
     @Override
     public List<TokenOptionResult> getOptions(OptionsRequest request) {
-        return executeSync(bHexOptionApiService.getOptions(request.getExpired()));
+        return executeSync(aPeexOptionApiService.getOptions(request.getExpired()));
     }
 
     @Override
     public OptionOrderResult newOptionOrder(OptionOrderRequest request) {
-        return executeSync(bHexOptionApiService.newOptionOrder(
+        return executeSync(aPeexOptionApiService.newOptionOrder(
                 request.getSymbol(),
                 request.getOrderSide() == null ? "" : request.getOrderSide().name(),
                 request.getOrderType() == null ? "" : request.getOrderType().name(),
@@ -55,7 +55,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public OptionOrderResult cancelOptionOrder(CancelOrderRequest cancelOrderRequest) {
-        return executeSync(bHexOptionApiService.cancelOptionOrder(
+        return executeSync(aPeexOptionApiService.cancelOptionOrder(
                 cancelOrderRequest.getOrderId(),
                 cancelOrderRequest.getClientOrderId(),
                 cancelOrderRequest.getRecvWindow(),
@@ -65,7 +65,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public List<OptionOrderResult> getOptionOpenOrders(OptionOpenOrderRequest orderRequest) {
-        return executeSync(bHexOptionApiService.getOptionOpenOrders(
+        return executeSync(aPeexOptionApiService.getOptionOpenOrders(
                 orderRequest.getSymbol(),
                 orderRequest.getOrderId(),
                 orderRequest.getLimit(),
@@ -78,7 +78,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public List<OptionOrderResult> getOptionHistoryOrders(OptionHistoryOrderRequest orderRequest) {
-        return executeSync(bHexOptionApiService.getOptionHistoryOrders(
+        return executeSync(aPeexOptionApiService.getOptionHistoryOrders(
                 orderRequest.getSymbol(),
                 orderRequest.getOrderSide() == null ? "" : orderRequest.getOrderSide().name(),
                 orderRequest.getOrderType() == null ? "" : orderRequest.getOrderType().name(),
@@ -91,7 +91,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public List<OptionMatchResult> getOptionMyTrades(OptionTradeRequest request) {
-        return executeSync(bHexOptionApiService.getOptionMyTrades(
+        return executeSync(aPeexOptionApiService.getOptionMyTrades(
                 request.getSymbol(),
                 request.getFromId(),
                 request.getToId(),
@@ -104,7 +104,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public List<PositionResult> getOptionPositions(OptionPositionRequest request) {
-        return executeSync(bHexOptionApiService.getOptionPositions(
+        return executeSync(aPeexOptionApiService.getOptionPositions(
                 request.getSymbol(),
                 request.getRecvWindow(),
                 request.getTimestamp()
@@ -113,7 +113,7 @@ public class ApeexOptionApiRestClientImpl implements ApeexOptionApiRestClient {
 
     @Override
     public List<SettlementResult> getOptionSettlements(OptionSettlementRequest request) {
-        return executeSync(bHexOptionApiService.getOptionSettlements(
+        return executeSync(aPeexOptionApiService.getOptionSettlements(
                 request.getSymbol(),
                 request.getRecvWindow(),
                 request.getTimestamp()
