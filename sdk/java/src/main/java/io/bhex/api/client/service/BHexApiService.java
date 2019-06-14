@@ -1,10 +1,10 @@
-package io.bhex.api.client.service;
+package io.apeex.api.client.service;
 
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.domain.account.*;
-import io.bhex.api.client.domain.general.BrokerInfo;
-import io.bhex.api.client.domain.general.ServerTime;
-import io.bhex.api.client.domain.market.*;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.domain.account.*;
+import io.apeex.api.client.domain.general.BrokerInfo;
+import io.apeex.api.client.domain.general.ServerTime;
+import io.apeex.api.client.domain.market.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 

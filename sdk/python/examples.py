@@ -1,6 +1,6 @@
 import time
 
-from bhex.client import BhexClient
+from apeex.client import BhexClient
 
 if __name__ == '__main__':
 

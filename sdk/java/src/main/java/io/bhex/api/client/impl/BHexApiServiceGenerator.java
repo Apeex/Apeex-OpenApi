@@ -1,11 +1,11 @@
-package io.bhex.api.client.impl;
+package io.apeex.api.client.impl;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.bhex.api.client.BHexApiError;
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.exception.BHexApiException;
-import io.bhex.api.client.security.AuthenticationInterceptor;
+import io.apeex.api.client.BHexApiError;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.exception.BHexApiException;
+import io.apeex.api.client.security.AuthenticationInterceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import org.apache.commons.lang3.StringUtils;
@@ -20,7 +20,7 @@ import java.lang.annotation.Annotation;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Generates a BHex API implementation based on @see {@link io.bhex.api.client.service.BHexApiService}.
+ * Generates a BHex API implementation based on @see {@link io.apeex.api.client.service.BHexApiService}.
  */
 public class BHexApiServiceGenerator {
     private static final OkHttpClient sharedClient = new OkHttpClient.Builder()

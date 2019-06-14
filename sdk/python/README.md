@@ -7,7 +7,7 @@ Install
 -------
 
 ```bash
-pip install bhex
+pip install apeex
 ```
 
 Usage
@@ -15,7 +15,7 @@ Usage
 
 #### REST API
 
-Init bhex client:
+Init apeex client:
 ```python
 b = BhexClient(api_key='', secret='')
 ```
@@ -35,7 +35,7 @@ b = BhexClient(api_key='', secret='', proxies=proxies)
 
 ##### Init
 
-Init bhex websocket client:
+Init apeex websocket client:
 ```python
 client = BhexWss(api_key='', secret='')
 ```

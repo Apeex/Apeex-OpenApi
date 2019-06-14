@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.general;
+package io.apeex.api.client.domain.general;
 
 /**
  * Time of the server running BHex's REST API.

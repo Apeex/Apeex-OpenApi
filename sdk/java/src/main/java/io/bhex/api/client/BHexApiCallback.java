@@ -1,4 +1,4 @@
-package io.bhex.api.client;
+package io.apeex.api.client;
 
 /**
  * BHexApiCallback is a functional interface used together with the BHexApiAsyncClient to provide a non-blocking REST client.

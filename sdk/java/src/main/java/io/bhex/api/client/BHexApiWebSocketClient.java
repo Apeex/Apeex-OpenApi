@@ -1,13 +1,13 @@
-package io.bhex.api.client;
+package io.apeex.api.client;
 
 
-import io.bhex.api.client.domain.account.SocketUserResponse;
-import io.bhex.api.client.domain.event.CandlestickEvent;
-import io.bhex.api.client.domain.event.DepthEvent;
-import io.bhex.api.client.domain.event.IndexEvent;
-import io.bhex.api.client.domain.event.TickerEvent;
-import io.bhex.api.client.domain.event.TradeEvent;
-import io.bhex.api.client.domain.market.CandlestickInterval;
+import io.apeex.api.client.domain.account.SocketUserResponse;
+import io.apeex.api.client.domain.event.CandlestickEvent;
+import io.apeex.api.client.domain.event.DepthEvent;
+import io.apeex.api.client.domain.event.IndexEvent;
+import io.apeex.api.client.domain.event.TickerEvent;
+import io.apeex.api.client.domain.event.TradeEvent;
+import io.apeex.api.client.domain.market.CandlestickInterval;
 
 import java.io.Closeable;
 

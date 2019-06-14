@@ -1,4 +1,4 @@
-package io.bhex.api.client.constant;
+package io.apeex.api.client.constant;
 
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -6,14 +6,14 @@ public class BHexConstants {
 
     public static final long DEFAULT_RECEIVING_WINDOW = 5_000L;
 
-    public static final String API_BASE_URL = "https://api.bhex.com/";
+    public static final String API_BASE_URL = "https://api.apeex.io/";
 
     /**
      * Streaming API base URL.
      */
-    public static final String WS_API_BASE_URL = "wss://wsapi.bhex.com/openapi/quote/ws/v1";
+    public static final String WS_API_BASE_URL = "wss://wsapi.apeex.io/openapi/quote/ws/v1";
 
-    public static final String WS_API_USER_URL = "wss://wsapi.bhex.com/openapi/ws/";
+    public static final String WS_API_USER_URL = "wss://wsapi.apeex.io/openapi/ws/";
 
 
     public static final String API_KEY_HEADER = "X-BH-APIKEY";

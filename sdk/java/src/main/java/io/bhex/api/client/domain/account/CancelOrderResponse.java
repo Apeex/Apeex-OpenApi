@@ -1,13 +1,13 @@
-package io.bhex.api.client.domain.account;
+package io.apeex.api.client.domain.account;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.bhex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.BHexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Response object returned when an order is canceled.
  *
- * @see io.bhex.api.client.domain.account.request.CancelOrderRequest for the request
+ * @see io.apeex.api.client.domain.account.request.CancelOrderRequest for the request
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CancelOrderResponse {

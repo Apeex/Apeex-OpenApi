@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.option;
+package io.apeex.api.client.domain.option;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

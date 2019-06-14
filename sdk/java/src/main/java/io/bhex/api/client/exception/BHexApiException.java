@@ -1,6 +1,6 @@
-package io.bhex.api.client.exception;
+package io.apeex.api.client.exception;
 
-import io.bhex.api.client.BHexApiError;
+import io.apeex.api.client.BHexApiError;
 
 /**
  * An exception which can occur while invoking methods of the BHex API.

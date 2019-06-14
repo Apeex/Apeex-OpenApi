@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.general;
+package io.apeex.api.client.domain.general;
 
 
 import java.io.Serializable;

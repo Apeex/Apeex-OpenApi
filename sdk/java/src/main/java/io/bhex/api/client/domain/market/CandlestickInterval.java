@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.market;
+package io.apeex.api.client.domain.market;
 
 /**
  * Kline/Candlestick intervals.

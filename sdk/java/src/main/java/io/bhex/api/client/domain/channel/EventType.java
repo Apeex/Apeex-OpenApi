@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.channel;
+package io.apeex.api.client.domain.channel;
 
 public enum EventType {
 

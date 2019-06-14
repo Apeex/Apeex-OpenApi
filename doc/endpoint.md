@@ -2,12 +2,12 @@
 
 ## Base Domain
 
-bhex.com
+apeex.io
 
 ## API Endpoint ($HOST)
 
 | Name               | base endpoint                                    |
 | ------------------ | ------------------------------------------------ |
-| rest-api           | **[https://api.bhex.com](https://api.bhex.com)** |
-| web-socket-streams | **[wss://wsapi.bhex.com](wss://wsapi.bhex.com)** |
-| user-data-stream   | **[wss://wsapi.bhex.com](wss://wsapi.bhex.com)** |
+| rest-api           | **[https://api.apeex.io](https://api.apeex.io)** |
+| web-socket-streams | **[wss://wsapi.apeex.io](wss://wsapi.apeex.io)** |
+| user-data-stream   | **[wss://wsapi.apeex.io](wss://wsapi.apeex.io)** |

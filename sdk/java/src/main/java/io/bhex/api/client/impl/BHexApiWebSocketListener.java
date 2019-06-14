@@ -1,10 +1,10 @@
-package io.bhex.api.client.impl;
+package io.apeex.api.client.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.bhex.api.client.BHexApiCallback;
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.exception.BHexApiException;
+import io.apeex.api.client.BHexApiCallback;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.exception.BHexApiException;
 import okhttp3.Response;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;

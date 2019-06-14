@@ -1,4 +1,4 @@
-package io.bhex.api.test.constant;
+package io.apeex.api.test.constant;
 
 public class Constants {
 

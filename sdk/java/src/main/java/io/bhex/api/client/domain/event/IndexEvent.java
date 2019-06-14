@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.event;
+package io.apeex.api.client.domain.event;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

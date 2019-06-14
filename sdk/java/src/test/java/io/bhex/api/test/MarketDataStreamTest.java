@@ -1,8 +1,8 @@
-package io.bhex.api.test;
+package io.apeex.api.test;
 
-import io.bhex.api.client.BHexApiClientFactory;
-import io.bhex.api.client.BHexApiWebSocketClient;
-import io.bhex.api.client.domain.market.CandlestickInterval;
+import io.apeex.api.client.BHexApiClientFactory;
+import io.apeex.api.client.BHexApiWebSocketClient;
+import io.apeex.api.client.domain.market.CandlestickInterval;
 
 public class MarketDataStreamTest {
 

@@ -1,10 +1,10 @@
-package io.bhex.api.client.domain.event;
+package io.apeex.api.client.domain.event;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.domain.market.OrderBookEntry;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.domain.market.OrderBookEntry;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;

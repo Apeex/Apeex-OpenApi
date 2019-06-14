@@ -1,6 +1,6 @@
-package io.bhex.api.client.domain.account.request;
+package io.apeex.api.client.domain.account.request;
 
-import io.bhex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.BHexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**

@@ -1,9 +1,9 @@
-package io.bhex.api.test;
+package io.apeex.api.test;
 
-import io.bhex.api.client.BHexApiClientFactory;
-import io.bhex.api.client.BHexApiRestClient;
-import io.bhex.api.client.domain.general.BrokerInfo;
-import io.bhex.api.test.constant.Constants;
+import io.apeex.api.client.BHexApiClientFactory;
+import io.apeex.api.client.BHexApiRestClient;
+import io.apeex.api.client.domain.general.BrokerInfo;
+import io.apeex.api.test.constant.Constants;
 
 public class GeneralRestApiTest {
 

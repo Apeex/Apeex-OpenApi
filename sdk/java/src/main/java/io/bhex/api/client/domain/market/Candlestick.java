@@ -1,8 +1,8 @@
-package io.bhex.api.client.domain.market;
+package io.apeex.api.client.domain.market;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import io.bhex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.BHexConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**

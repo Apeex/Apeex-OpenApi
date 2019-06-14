@@ -1,11 +1,11 @@
-package io.bhex.api.client;
+package io.apeex.api.client;
 
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.impl.BHexApiRestClientImpl;
-import io.bhex.api.client.impl.BHexApiWebSocketClientImpl;
-import io.bhex.api.client.impl.BHexOptionApiRestClientImpl;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.impl.BHexApiRestClientImpl;
+import io.apeex.api.client.impl.BHexApiWebSocketClientImpl;
+import io.apeex.api.client.impl.BHexOptionApiRestClientImpl;
 
-import static io.bhex.api.client.impl.BHexApiServiceGenerator.getSharedClient;
+import static io.apeex.api.client.impl.BHexApiServiceGenerator.getSharedClient;
 
 /**
  * A factory for creating BHexApi client objects.

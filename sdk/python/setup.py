@@ -4,7 +4,7 @@ import os
 
 from setuptools import setup, find_packages
 
-description = "Python SDK for Bhex REST And Websocket API (https://www.bhex.com)"
+description = "Python SDK for Bhex REST And Websocket API (https://www.apeex.io)"
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -15,14 +15,14 @@ def read(*parts):
 
 
 setup(
-    name="bhex",
+    name="apeex",
     version="1.1",
     author="Bhex",
-    author_email="pip@bhex.com",
+    author_email="pip@apeex.io",
     description=description,
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
-    url="https://github.com/bhexopen/BHEX-OpenApi/tree/master/sdk/python",
+    url="https://github.com/apeexopen/APEEX-OpenApi/tree/master/sdk/python",
     packages=find_packages(),
     install_requires=['requests', 'six', 'twisted', 'autobahn', 'pyopenssl', 'service_identity'],
     classifiers=[

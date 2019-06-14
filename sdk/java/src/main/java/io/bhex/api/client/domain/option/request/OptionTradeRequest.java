@@ -1,7 +1,7 @@
-package io.bhex.api.client.domain.option.request;
+package io.apeex.api.client.domain.option.request;
 
 
-import io.bhex.api.client.domain.account.OrderSide;
+import io.apeex.api.client.domain.account.OrderSide;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

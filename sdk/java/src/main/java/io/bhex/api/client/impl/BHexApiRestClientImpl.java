@@ -1,17 +1,17 @@
-package io.bhex.api.client.impl;
+package io.apeex.api.client.impl;
 
-import io.bhex.api.client.BHexApiRestClient;
-import io.bhex.api.client.constant.BHexConstants;
-import io.bhex.api.client.domain.account.*;
-import io.bhex.api.client.domain.account.request.*;
-import io.bhex.api.client.domain.general.BrokerInfo;
-import io.bhex.api.client.domain.market.*;
-import io.bhex.api.client.service.BHexApiService;
+import io.apeex.api.client.BHexApiRestClient;
+import io.apeex.api.client.constant.BHexConstants;
+import io.apeex.api.client.domain.account.*;
+import io.apeex.api.client.domain.account.request.*;
+import io.apeex.api.client.domain.general.BrokerInfo;
+import io.apeex.api.client.domain.market.*;
+import io.apeex.api.client.service.BHexApiService;
 
 import java.util.List;
 
-import static io.bhex.api.client.impl.BHexApiServiceGenerator.createService;
-import static io.bhex.api.client.impl.BHexApiServiceGenerator.executeSync;
+import static io.apeex.api.client.impl.BHexApiServiceGenerator.createService;
+import static io.apeex.api.client.impl.BHexApiServiceGenerator.executeSync;
 
 /**
  * Implementation of BHex's REST API using Retrofit with synchronous/blocking method calls.

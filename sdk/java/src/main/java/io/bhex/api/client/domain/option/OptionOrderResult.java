@@ -1,13 +1,13 @@
 
-package io.bhex.api.client.domain.option;
+package io.apeex.api.client.domain.option;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-import io.bhex.api.client.domain.account.OrderSide;
-import io.bhex.api.client.domain.account.OrderStatus;
+import io.apeex.api.client.domain.account.OrderSide;
+import io.apeex.api.client.domain.account.OrderStatus;
 import lombok.Data;
 import lombok.Singular;
 

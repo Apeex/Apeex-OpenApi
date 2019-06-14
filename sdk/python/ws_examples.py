@@ -1,4 +1,4 @@
-from bhex.websockets import BhexWss
+from apeex.websockets import BhexWss
 
 
 def handler(msg):

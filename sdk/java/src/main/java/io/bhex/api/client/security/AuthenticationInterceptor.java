@@ -1,6 +1,6 @@
-package io.bhex.api.client.security;
+package io.apeex.api.client.security;
 
-import io.bhex.api.client.constant.BHexConstants;
+import io.apeex.api.client.constant.BHexConstants;
 import okhttp3.*;
 import okio.Buffer;
 import org.apache.commons.lang3.StringUtils;

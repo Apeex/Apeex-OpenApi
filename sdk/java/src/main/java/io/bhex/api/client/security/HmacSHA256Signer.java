@@ -1,4 +1,4 @@
-package io.bhex.api.client.security;
+package io.apeex.api.client.security;
 
 import org.apache.commons.codec.binary.Hex;
 

@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.market;
+package io.apeex.api.client.domain.market;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;

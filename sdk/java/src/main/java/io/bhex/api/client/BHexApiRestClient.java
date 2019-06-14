@@ -1,9 +1,9 @@
-package io.bhex.api.client;
+package io.apeex.api.client;
 
-import io.bhex.api.client.domain.account.*;
-import io.bhex.api.client.domain.account.request.*;
-import io.bhex.api.client.domain.general.BrokerInfo;
-import io.bhex.api.client.domain.market.*;
+import io.apeex.api.client.domain.account.*;
+import io.apeex.api.client.domain.account.request.*;
+import io.apeex.api.client.domain.general.BrokerInfo;
+import io.apeex.api.client.domain.market.*;
 
 import java.util.List;
 

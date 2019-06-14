@@ -1,4 +1,4 @@
-package io.bhex.api.client.domain.event;
+package io.apeex.api.client.domain.event;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.bhex.api.client.domain.market.OrderBookEntry;
+import io.apeex.api.client.domain.market.OrderBookEntry;
 
 import java.io.IOException;
 import java.util.List;

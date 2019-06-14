@@ -1,8 +1,8 @@
 import logging
 import time
 
-from bhex.client import BhexOptionClient
-from bhex.exceptions import BhexRequestException, BhexAPIException
+from apeex.client import BhexOptionClient
+from apeex.exceptions import BhexRequestException, BhexAPIException
 
 if __name__ == '__main__':
 
